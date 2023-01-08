@@ -10,17 +10,21 @@
 #include <vector>
 using namespace std;
 
+class Game {
+    
+};
+
 int main(int argc, const char * argv[]) {
     if(SDL_Init(SDL_INIT_EVERYTHING)){
         printf("Error: %s\n", SDL_GetError());
-        return false;
+        return 0;
     }
     SDL_Window *window = SDL_CreateWindow("Cube", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_SHOWN);
     SDL_Renderer *Renderer;
     Renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if(!window){
         printf("Error: %s\n", SDL_GetError());
-        return false;
+        return 0;
     }
     
     SDL_SetRenderDrawColor(Renderer, 255, 255, 255, 255);
@@ -72,15 +76,15 @@ int main(int argc, const char * argv[]) {
         }
     }
     cout << endl <<"Game is Running";
-    bool quit = false;
-    while(!quit) {
-        while (SDL_PollEvent(&event)){
-            if(event.type == SDL_QUIT){
-                quit = true;
-            }
-            //printf("type = %d, key=%d\n", event.type, event.key);
-        }
-    }
+//    bool quit = false;
+//    while(!quit) {
+//        while (SDL_PollEvent(&event)){
+//            if(event.type == SDL_QUIT){
+//                quit = true;
+//            }
+//            //printf("type = %d, key=%d\n", event.type, event.key);
+//        }
+//    }
 
     SDL_DestroyRenderer(Renderer);
     SDL_DestroyWindow(window);
