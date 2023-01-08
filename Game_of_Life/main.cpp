@@ -11,7 +11,7 @@
 using namespace std;
 
 class Game {
-    
+    Game() {};
 };
 
 int main(int argc, const char * argv[]) {
